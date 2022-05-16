@@ -2,7 +2,7 @@ const { ObjectId } = require('mongodb');
 
 module.exports = function(app, db) {
 	app.get('/orders', (req, res) => {
-		res.send('Welcome Orders Page!');
+		res.send('Welcome to Orders Page!');
 	});
 
     app.get('/orders/:id', (req, res) => {
