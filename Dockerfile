@@ -1,12 +1,13 @@
-FROM node:18-alpine3.14
+FROM node:14
 
 WORKDIR /app
 
-COPY . .
+COPY package*.json ./
 
-RUN npm install -save express mongodb body-parser
-RUN npm install --save-dev nodemon
+RUN npm install 
+
+COPY . .
 
 EXPOSE 3000
 
-CMD ["npm", "run", "dev"]
+CMD ["node", "server.js"]
