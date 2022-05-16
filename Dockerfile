@@ -1,12 +1,10 @@
-FROM node:14
+FROM node:18-alpine3.14
 
 WORKDIR /app
 
-COPY package*.json ./
-
-RUN npm install 
-
 COPY . .
+
+RUN npm install express mongodb body-parser
 
 EXPOSE 3000
 
